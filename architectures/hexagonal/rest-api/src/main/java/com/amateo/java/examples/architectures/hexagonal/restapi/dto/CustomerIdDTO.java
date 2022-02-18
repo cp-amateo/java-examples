@@ -1,4 +1,4 @@
-package com.amateo.java.examples.architectures.hexagonal.restapi.dto.response;
+package com.amateo.java.examples.architectures.hexagonal.restapi.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -7,7 +7,7 @@ import lombok.Getter;
 @Getter
 @Builder
 @AllArgsConstructor
-public class CustomerResponse {
+public class CustomerIdDTO {
 
     private String id;
 

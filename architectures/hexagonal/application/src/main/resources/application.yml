@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: hexagonal-architecture
+  data:
+    mongodb:
+      uri: ${MONGO_URL:mongodb://localhost:27017/demodb}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  health:
+    mongo:
+      enabled: true
+    livenessState:
+      enabled: true
+    readinessState:
+      enabled: true
+  endpoint:
+    health:
+      probes:
+        enabled: true
+      show-details: ALWAYS
+      show-components: ALWAYS
+      group:
+        liveness:
+          include: livenessState
+        readiness:
+          include: "readinessState, mongo"

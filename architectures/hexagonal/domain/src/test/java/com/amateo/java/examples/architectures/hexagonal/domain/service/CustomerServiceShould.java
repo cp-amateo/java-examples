@@ -16,6 +16,7 @@ import java.util.Optional;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
@@ -49,6 +50,14 @@ class CustomerServiceShould {
         final var customer = customerService.findCustomerById(ID);
 
         assertThat(customer).isEqualTo(getCustomer());
+    }
+
+    @Test
+    void createCustomer_newCustomer_returnCustomerData() {
+        final var customer = getCustomer();
+        customerService.createCustomer(customer);
+
+        verify(customerRepository).save(customer);
     }
 
     private Customer getCustomer() {

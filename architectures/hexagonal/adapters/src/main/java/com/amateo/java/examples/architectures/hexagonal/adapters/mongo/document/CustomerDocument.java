@@ -3,7 +3,6 @@ package com.amateo.java.examples.architectures.hexagonal.adapters.mongo.document
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.LastModifiedDate;
@@ -14,7 +13,6 @@ import java.time.LocalDateTime;
 
 @Builder
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
 @Document("customers")
 public class CustomerDocument {

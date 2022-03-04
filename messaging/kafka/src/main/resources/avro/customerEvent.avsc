@@ -1,0 +1,22 @@
+{
+  "type": "record",
+  "name": "CustomerEvent",
+  "namespace": "com.amateo.java.examples.messaging.kafka.event",
+  "fields": [
+    {
+      "name": "id",
+      "type": "string"
+    },
+    {
+      "name": "firstName",
+      "type": "string"
+    },
+    {
+      "name": "lastName",
+      "type": "string"
+    },
+    {
+      "name": "email",
+      "type": "string"
+    }]
+}

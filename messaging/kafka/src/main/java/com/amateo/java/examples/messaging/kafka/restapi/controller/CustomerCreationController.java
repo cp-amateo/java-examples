@@ -1,8 +1,8 @@
-package com.amateo.java.examples.messaging.kafka.controller;
+package com.amateo.java.examples.messaging.kafka.restapi.controller;
 
-import com.amateo.java.examples.messaging.kafka.dto.CustomerDTO;
+import com.amateo.java.examples.messaging.kafka.agents.producer.CustomerEventProducer;
 import com.amateo.java.examples.messaging.kafka.event.CustomerEvent;
-import com.amateo.java.examples.messaging.kafka.producer.CustomerEventProducer;
+import com.amateo.java.examples.messaging.kafka.restapi.dto.CustomerDTO;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.security.SecureRandom;
+import java.util.Random;
 
 @RestController
 @RequestMapping("customer")
@@ -36,9 +37,8 @@ public class CustomerCreationController {
     }
 
     private String getRandomString() {
-        return String.valueOf(
-                new SecureRandom().longs(80_010_000_000L, 100_000_000_000L)
-                        .findFirst().getAsLong());
+        final Long randomNumber = new Random().longs().findFirst().orElse(Long.MIN_VALUE);
+        return String.valueOf(randomNumber);
     }
 
 }

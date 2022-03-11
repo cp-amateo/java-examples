@@ -1,12 +1,8 @@
-package com.amateo.java.examples.messaging.kafka.dto;
+package com.amateo.java.examples.messaging.kafka.restapi.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.EqualsAndHashCode;
 import lombok.Getter;
-import org.springframework.format.annotation.DateTimeFormat;
-
-import java.time.LocalDate;
 
 @Getter
 @Builder

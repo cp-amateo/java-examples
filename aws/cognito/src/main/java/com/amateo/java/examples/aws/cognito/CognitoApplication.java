@@ -7,9 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class CognitoApplication {
 
     public static void main(String[] args) {
-
         SpringApplication.run(CognitoApplication.class, args);
-
     }
 
 }

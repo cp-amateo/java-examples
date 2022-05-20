@@ -1,0 +1,32 @@
+server:
+  port: 8080
+
+
+spring:
+  application:
+    name: jap-example
+  datasource:
+    initialize: true
+    url: jdbc:h2:mem:testdb
+    driverClassName: org.h2.Driver
+    username: sa
+  jpa:
+    show-sql: true
+    generate-ddl: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+
+javax:
+  persistence:
+    schema-generation:
+      create-source: metadata
+      scripts:
+        action: create
+
+logging:
+  level:
+    org.springframework.web: WARN

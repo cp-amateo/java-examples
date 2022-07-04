@@ -18,6 +18,7 @@ services:
     restart: always
     build:
       dockerfile: Dockerfile
+      context: .
     environment:
       - MONGO_URL=mongodb://mongo-test:27017/demodb
     command: java -jar app.jar

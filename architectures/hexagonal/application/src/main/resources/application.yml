@@ -4,6 +4,21 @@ spring:
   data:
     mongodb:
       uri: ${MONGO_URL:mongodb://localhost:27017/demodb}
+  datasource:
+    initialize: true
+    url: jdbc:mysql://${MYSQL_URL}/${MYSQL_SCHEMA}
+    driverClassName: com.mysql.jdbc.Driver
+    username: ${MYSQL_USER}
+    password: ${MYSQL_PASS}
+    jpa:
+      show-sql: true
+      generate-ddl: true
+      properties:
+        hibernate:
+          format_sql: true
+          dialect: org.hibernate.dialect.MySQL5Dialect
+      hibernate:
+        ddl-auto: update
 
 management:
   endpoints:

@@ -11,7 +11,7 @@ import java.time.LocalDate;
 @EqualsAndHashCode
 public class Customer {
 
-    private String id;
+    private Integer id;
     private String name;
     private String surnames;
     private LocalDate dob;
